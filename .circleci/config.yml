@@ -3,15 +3,16 @@ orbs:
   matlab: mathworks/matlab@dev:v1-rc
 jobs:
   build:
-    environment:
-      MATHWORKS_RMC_BASE_URL: https://mw-ci-static-dev.s3.amazonaws.com/run-matlab-command/v2
-      MATHWORKS_LICENSING_ENDPOINT: stage
+    # environment:
+    #   MATHWORKS_RMC_BASE_URL: https://mw-ci-static-dev.s3.amazonaws.com/run-matlab-command/v2
+    #   MATHWORKS_LICENSING_ENDPOINT: stage
 
     machine:
       image: ubuntu-2204:2023.10.1
     steps:
       - checkout
-      - matlab/install
+      - matlab/install:
+          release: 2023b
       - matlab/run-command:
           command: ver
       - matlab/run-tests:
