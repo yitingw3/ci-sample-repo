@@ -35,7 +35,7 @@ jobs:
           source-folder: code
 
       # Run MATLAB build tool
-      name: Run build
+      - name: Run build
         uses: matlab-actions/run-build@v2-rc0
         with:
           tasks: clean mtest
