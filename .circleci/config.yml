@@ -12,8 +12,10 @@ jobs:
     steps:
       - checkout
       - matlab/install:
-          release: 2023b
+          release: R2023b
       - matlab/run-command:
           command: ver
       - matlab/run-tests:
           source-folder: code
+      - matlab/run-build:
+          tasks: clean mtest
