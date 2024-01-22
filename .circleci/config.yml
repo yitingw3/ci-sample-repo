@@ -13,6 +13,7 @@ jobs:
       - checkout
       - matlab/install:
           release: R2023bU2
+          no-output-timeout: 30m
       - matlab/run-command:
           command: ver
       - matlab/run-tests:
