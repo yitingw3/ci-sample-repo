@@ -6,7 +6,7 @@ import matlab.buildtool.tasks.CleanTask
 plan = buildplan(localfunctions);
 
 % Add a task to run the tests in the project
-plan("mtest") =  TestTask("tests",SourceFiles="code");
+plan("mtest") = TestTask("tests",SourceFiles="code");
 
 plan("clean") = CleanTask;
 
