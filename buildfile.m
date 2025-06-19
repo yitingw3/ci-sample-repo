@@ -1,13 +1,16 @@
 function plan = buildfile
 
-import matlab.buildtool.tasks.TestTask
-import matlab.buildtool.tasks.CleanTask
-% Create a plan from the task functions
+% Add the source folder to the path
+addpath("code");
+
+% Create a plan
 plan = buildplan(localfunctions);
 
-% Add a task to run the tests in the project
-plan("mtest") =  TestTask("tests",SourceFiles="code");
+% Add a task to run tests
+plan("test") = matlab.buildtool.tasks.TestTask("tests");
 
-plan("clean") = CleanTask;
+% Make the "test" task the default task in the plan
+plan.DefaultTasks = "test";
 
 end
+

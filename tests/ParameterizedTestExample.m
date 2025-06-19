@@ -1,4 +1,4 @@
-classdef (SharedTestFixtures={matlab.unittest.fixtures.PathFixture(fullfile("..", "code"))}) ParameterizedTestExample < matlab.unittest.TestCase
+classdef ParameterizedTestExample < matlab.unittest.TestCase
     % Creates 12 test points, one test point for the 15th day of every month of 2021
     
 	% Copyright 2022 The MathWorks, Inc.
